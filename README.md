@@ -96,3 +96,45 @@ The main features of IPFS include:
 6. **Resistance to censorship:** Due to its decentralized nature and lack of a single point of control, IPFS is more resistant to censorship and content removal.
 
 IPFS has applications in various areas, including content distribution, software version management, website publishing, and the creation of decentralized applications (dApps). However, it also presents challenges in terms of widespread adoption and compatibility with existing web infrastructure.
+
+
+# How to install IPFS.
+## Linux.
+
+1. Open the terminal and update the system packages:
+```linux
+sudo apt-get update
+```
+2. Download the IPFS package from the IPFS downloads page:
+```linux
+wget https://dist.ipfs.io/go-ipfs/v0.10.0/go-ipfs_v0.10.0_linux-amd64.tar.gz
+```
+3. Extract the downloaded package:
+```linux
+tar xvfz go-ipfs_v0.10.0_linux-amd64.tar.gz
+```
+4. Navigate to the newly extracted directory:
+```linux
+cd go-ipfs
+```
+5. Run the installation script:
+```linux
+sudo ./install.sh
+```
+6. Verify that IPFS has been installed successfully:
+```linux
+ipfs --version
+```
+7. If the installation was successful, initialize the IPFS node:
+```linux
+ipfs init
+```
+8. To verify that the node has started successfully, run the following command:
+```linux
+ipfs daemon
+```
+9. If the node has started successfully, you can use the IPFS client to add and download files:
+```linux
+ipfs add <path to file>
+ipfs cat <hash of file>
+```
