@@ -138,3 +138,51 @@ ipfs daemon
 ipfs add <path to file>
 ipfs cat <hash of file>
 ```
+
+## Compiling Go
+
+
+```linux
+apt install git gcc
+snap install go --classic
+mkdir -p ~/Applications
+git clone https://go.googlesource.com/go ~/Applications/go
+cd ~/Applications/go/src
+git checkout go1.18
+./make.bash
+```
+
+Make sure to replace go1.18 with the latest Go version.
+
+Edit your ~/.profile to access this new Go installation.
+
+```linux
+# Go
+PATH="$HOME/Applications/go/bin:$PATH"
+PATH="$HOME/go/bin:$PATH"
+```
+
+## Compiling IPFS
+
+```linux
+apt install make pkg-config libssl-dev libcrypto++-dev
+mkdir -p ~/Applications
+git clone https://github.com/ipfs/go-ipfs.git ~/Applications/ipfs
+cd ~/Applications/ipfs
+go get github.com/lucas-clemente/quic-go@go118
+```
+
+I follow exactly this guide install openssl:
+
+```linux
+git clone --depth 1 https://github.com/openssl/openssl
+cd openssl
+./config enable-tls1_3 --prefix=/home/delia/openssl
+make
+make install
+GOTAGS=openssl make install
+```
+
+
+
+
