@@ -183,6 +183,44 @@ make install
 GOTAGS=openssl make install
 ```
 
+# Adding a service
 
+Configure your service as follows (this is a sample since DECA was used).
+
+Enter the following command to be able to configure the respective file (ipfs.service):
+
+```linux
+sudo vim /etc/systemd/system/ipfs.service
+```
+
+```linux
+[Unit]
+Description=InterPlanetary File System (IPFS) daemon
+Documentation=https://docs.ipfs.io/
+After=network.target
+
+[Service]
+Type=notify
+ExecStart=/home/ipfs/go/bin/ipfs daemon --enable-gc=true --migrate=true
+ExecStop=/home/ipfs/go/bin/ipfs shutdown
+Restart=on-failure
+KillSignal=SIGINT
+
+[Install]
+WantedBy=default.target
+```
+
+
+
+# Licence.
+```
+Copyright (C) DECENTRALIZED CLIMATE FOUNDATION A.C.
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License". 
+```
 
 
