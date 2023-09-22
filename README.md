@@ -186,7 +186,6 @@ sudo env GOTAGS=openssl make install
 # Adding a service
 
 Configure your service as follows (this is a sample since DECA was used).
-
 Enter the following command to be able to configure the respective file (ipfs.service):
 
 ```linux
