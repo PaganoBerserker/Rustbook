@@ -178,9 +178,9 @@ I follow exactly this guide install openssl:
 git clone --depth 1 https://github.com/openssl/openssl
 cd openssl
 ./config enable-tls1_3 --prefix=/home/team1/openssl
-make
-make install
-GOTAGS=openssl make install
+sudo make
+sudo make install
+sudo env GOTAGS=openssl make install
 ```
 
 # Adding a service
