@@ -101,6 +101,8 @@ IPFS has applications in various areas, including content distribution, software
 # How to install IPFS.
 ## Linux.
 
+Warning: You must execute the commands where indicated, and if it is not indicated it is preferable to execute it again in the root of the user, in this case the ipfs user.
+
 1. Open the terminal and update the system packages:
 ```linux
 sudo apt-get update
@@ -139,8 +141,18 @@ ipfs add <path to file>
 ipfs cat <hash of file>
 ```
 
+Warning: You must execute the commands where indicated, and if it is not indicated it is preferable to execute it again in the root of the user, in this case the ipfs user.
+
 ## Compiling Go
 
+```linux
+wget https://golang.org/dl/go1.20.linux-amd64.tar.gz
+tar -xvf go1.20.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+source ~/.bashrc
+source ~/.zshrc
+go version
+```
 
 ```linux
 apt install git gcc
@@ -151,6 +163,8 @@ cd ~/Applications/go/src
 git checkout go1.18
 ./make.bash
 ```
+
+Warning: You must execute the commands where indicated, and if it is not indicated it is preferable to execute it again in the root of the user, in this case the ipfs user.
 
 Make sure to replace go1.18 with the latest Go version.
 
@@ -182,6 +196,7 @@ sudo make
 sudo make install
 sudo env GOTAGS=openssl make install
 ```
+Warning: You must execute the commands where indicated, and if it is not indicated it is preferable to execute it again in the root of the user, in this case the ipfs user.
 
 # Adding a service
 
